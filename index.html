@@ -11,43 +11,50 @@
   <body>
     <div class="wrapper">
       <div class="container">
-        <h2>Pokemon</h2>
+        <!-- <h2>Pokemon</h2> -->
 
         <!-- Nombre -->
+        <div class="principal">
         <div class="pokemon-name">
-          <h3>Charizard</h3>
-          <span>#0006</span>
+          <h3 id="name"></h3>
+          <p>#<span id="pkid"></span></p>
         </div>
-
+        <div class="search">
+          <form class="formulario">
+            <input type="text" placeholder="Buscar Pokemon" id="pokemon">
+            <button type="submit" id="search">
+              <img src="https://cdn-icons-png.flaticon.com/512/54/54481.png" alt="">
+            </button>
+          </form>
+        </div>
+        </div>
         <!-- Contenido -->
         <div class="content">
           <!-- imagen -->
-          <div class="image">
-            <img
-              src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/006.png"
-              alt=""
-            />
+          <div class="image" id="image">
           </div>
 
           <!-- bio -->
           <div class="bio">
-            <p>
-              It spits fire that is hot enough to melt boulders. It may cause
-              forest fires by blowing flames.
+            <p id="bioContent">
             </p>
 
             <div class="version">
-              <p>Version:</p>
+              <p>Versions:</p>
+              <div id="actRed" class="act">
               <img
                 src="https://static.thenounproject.com/png/594337-200.png"
                 alt="red"
                 id="red"
               />
+            </div>
+            <div id="actBlue">
               <img
                 src="https://static.thenounproject.com/png/594337-200.png"
                 alt="blue"
                 id="blue"
               />
+            </div>
             </div>
           </div>
 
@@ -55,13 +62,13 @@
           <div class="atr">
             <ul class="atr-ul">
               <li class="atr-one">
-                Weight
-                <span>199.5 lbs</span>
+                Height
+                <span id="height"></span>
               </li>
 
               <li class="atr-two">
-                Height
-                <span>5' 07"</span>
+                Weight
+                <span id="weight"></span>
               </li>
               <li class="atr-three">
                 Gender
@@ -76,13 +83,9 @@
                   />
                 </div>
               </li>
-              <li class="atr-four">
-                Category
-                <span>Flame</span>
-              </li>
-              <li class="atr-five">
+              <li class="atr-four" id="abilities">
                 Abilities
-                <span>Blaze</span>
+                <!-- <span id="abilities"></span> -->
               </li>
             </ul>
           </div>
@@ -90,73 +93,26 @@
           <!-- tipo -->
           <div class="type">
             <h3>Type</h3>
-            <ul class="type-ul">
-              <li class="type-atr">Fire</li>
-              <li class="type-atr">Flying</li>
-            </ul>
+            <ul class="type-ul" id="type-ul"></ul>
           </div>
 
           <!-- stadistica -->
-          <div class="stats">
+          <div class="stats" id="stats">
             <h3>Stats</h3>
-            <div class="skills">
-              <div class="details">
+            <!-- <div class="skills">
+              <div class="details" id="details">
                 <span>HP</span>
                 <span>100%</span>
               </div>
-              <div class="bar">
+            <div class="bar">
                 <div id="hp-bar"></div>
               </div>
-            </div>
-            <div class="skills">
-              <div class="details">
-                <span>Attack</span>
-                <span>75%</span>
-              </div>
-              <div class="bar">
-                <div id="attack-bar"></div>
-              </div>
-            </div>
-            <div class="skills">
-              <div class="details">
-                <span>Defense</span>
-                <span>72%</span>
-              </div>
-              <div class="bar">
-                <div id="defense-bar"></div>
-              </div>
-            </div>
-            <div class="skills">
-              <div class="details">
-                <span>Special-Attack</span>
-                <span>68%</span>
-              </div>
-              <div class="bar">
-                <div id="sattack-bar"></div>
-              </div>
-            </div>
-            <div class="skills">
-              <div class="details">
-                <span>Special-Defense</span>
-                <span>68%</span>
-              </div>
-              <div class="bar">
-                <div id="sdefense-bar"></div>
-              </div>
-            </div>
-            <div class="skills">
-              <div class="details">
-                <span>Speed</span>
-                <span>68%</span>
-              </div>
-              <div class="bar">
-                <div id="speed-bar"></div>
-              </div>
-            </div>
-          </div>
+            </div> -->
           <!--  -->
         </div>
       </div>
     </div>
+
+    <script src="./app.js"></script>
   </body>
 </html>

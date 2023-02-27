@@ -7,11 +7,14 @@
 body{
   height:100vh;
     background-image: url('https://i.pinimg.com/originals/2b/3b/04/2b3b04771ccca26c3dd96d781b0117ca.jpg');
+    background-repeat: no-repeat;
+    background-size: 100%;
 }
 
 .wrapper {
     width: 50%;
-    margin: 200px auto;
+    height: 98%;
+    /* margin: 200px auto; */
     min-width: 590px;
     position: absolute;
     transform: translate(-50%,-50%);
@@ -21,7 +24,7 @@ body{
 
 .container {
     width: 100%;
-    padding: 30px 30px 50px;
+    padding: 20px 20px 25px;
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 20px 30px rgba(0,0,0,0.2);
@@ -33,38 +36,61 @@ body{
     font-weight: 500px;
 }
 
-h2 {
-    margin-bottom: 50px;
-    letter-spacing: 2px;
-    text-align: center;
-    font-size: 50px;
-    font-weight: bold;
+.principal {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .pokemon-name {
-    width: 100%;
+    margin: 20px 0 30px 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
+    gap: 15px;
     /* background-color: green; */
 }
 
 .pokemon-name h3 {
     letter-spacing: 1px;
-    font-size: 32px;
+    font-size: 40px;
     font-weight: bold;
 }
 
-.pokemon-name span {
+.pokemon-name p, .pokemon-name span {
     color: gray;
     font-size: 26px;
+}
+
+/* Search */
+
+.formulario {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.search button {
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+}
+
+.search button img {
+    width: 20px;
+    height: 20px;
+}
+
+.search input {
+    padding: 10px;
+    width: 300px;
+    border-radius: 50px;
+    font-size: 16px;
 }
 
 .content {
     width: 100%;
     height: 100%;
-    margin-top: 50px;
 
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -103,7 +129,7 @@ h2 {
 }
 
 #red {
-    filter: invert(68%) sepia(96%) saturate(4157%) hue-rotate(314deg) brightness(100%) contrast(103%);
+    filter: invert(24%) sepia(86%) saturate(6964%) hue-rotate(325deg) brightness(87%) contrast(111%);
     cursor: pointer;
 }
 
@@ -114,11 +140,21 @@ h2 {
 
 p {
     margin: 15px 0;
-    font-size: 20px;
+    font-size: 22px;
 }
 
 li {
     list-style: none;
+}
+
+.act {
+    border: 7px solid #609EA2;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* Atributos */
@@ -144,80 +180,59 @@ li {
     grid-column: 1;
     grid-row: 1;
     color: #fff;
-    font-size: 18px;
+    font-size: 20px;
 }
 
 .atr-one span {
     display: block;
     color: #000;
-    font-size: 20px;
-    margin-top: 10px;
+    font-size: 22px;
+    margin: 15px 0;
 }
 
 .atr-two {
     grid-column: 1;
     grid-row: 2;
     color: #fff;
-    font-size: 18px;
+    font-size: 20px;
 }
 
 .atr-two span {
     display: block;
     color: #000;
-    font-size: 20px;
-    margin-top: 10px;
+    font-size: 22px;
+    margin: 15px 0;
 }
 
 .atr-three {
     grid-column: 1;
     grid-row: 3;
     color: #fff;
-    font-size: 18px;
-}
-
-.atr-three span {
-    display: block;
-    color: #000;
     font-size: 20px;
-    margin-top: 10px;
 }
 
 .atr-four {
     grid-column: 2;
-    grid-row: 1;
+    grid-row: 1 / 3;
     color: #fff;
-    font-size: 18px;
+    font-size: 20px;
 }
 
 .atr-four span {
     display: block;
     color: #000;
-    font-size: 20px;
-    margin-top: 10px;
-}
-
-.atr-five {
-    grid-column: 2;
-    grid-row: 2;
-    color: #fff;
-    font-size: 18px;
-}
-
-.atr-five span {
-    display: block;
-    color: #000;
-    font-size: 20px;
-    margin-top: 10px;
+    font-size: 22px;
+    margin: 15px 0;
 }
 
 li img {
-    width: 20px;
-    height: 20px;
+    width: 25px;
+    height: 25px;
     margin-right: 10px;
 }
 
 .gender {
-    margin-top: 10px;
+    margin-top: 15px;
 }
 
 /* Type */
@@ -244,6 +259,7 @@ li img {
     height: 75%;
     background-color: #E8D5C4;
     text-align: center;
+    font-size: 18px;
     padding: 10px;
     border-radius: 10px;
 }
@@ -289,15 +305,15 @@ li img {
     margin-bottom: 20px;
 }
 
-#hp-bar{
+/* #hp-bar{
     animation: hp-fill 2s forwards;
-}
-@keyframes hp-fill{
+} */
+/* @keyframes hp-fill{
     100%{
         width: 50%;
     }
-}
-
+} */
+/* 
 #attack-bar{
     animation: attack-fill 2s forwards;
 }
@@ -316,19 +332,19 @@ li img {
     }
 }
 
-#sattack-bar{
-    animation: sattack-fill 2s forwards;
+#special-attack-bar{
+    animation: special-attack-fill 2s forwards;
 }
-@keyframes sattack-fill{
+@keyframes special-attack-fill{
     100%{
         width: 50%;
     }
 }
 
-#sdefense-bar{
-    animation: sdefense-fill 2s forwards;
+#special-defense-bar{
+    animation: special-defense-fill 2s forwards;
 }
-@keyframes sdefense-fill{
+@keyframes special-defense-fill{
     100%{
         width: 60%;
     }
@@ -341,4 +357,4 @@ li img {
     100%{
         width: 10%;
     }
-}
+} */
