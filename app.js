@@ -40,20 +40,47 @@ async function getData(url) {
     document.getElementById('height').textContent = formattedHeight
     document.getElementById('weight').textContent = formattedWeight
 
+    // Abilities
     const abilityAmount = data.abilities.length
     for(let i = 0; i < abilityAmount; i++) {
         const ability = data.abilities[i].ability.name
         const is_hidden = data.abilities[i].is_hidden
         if(!is_hidden){
             const abilitySpan = document.createElement('span')
-            const formattedAbility = ability.charAt(0).toUpperCase() + ability.slice(1)
+            let formattedAbility = ability.charAt(0).toUpperCase() + ability.slice(1)
+            if(formattedAbility.includes('-')){
+                formattedAbility = ability.slice(0, ability.indexOf('-')).charAt(0).toUpperCase() + ability.slice(1, ability.indexOf('-')) + ' ' + ability.slice(ability.indexOf('-') + 1).charAt(0).toUpperCase() + ability.slice(ability.indexOf('-') + 2)
+            }
             abilitySpan.textContent = formattedAbility
             const target = document.getElementById('abilities')
             target.appendChild(abilitySpan)
         }
-        
     }
     
+    // Gender
+    const genderUrl = data.species.url
+    const genderRes = await fetch(genderUrl)
+    const genderData = await genderRes.json()
+    const gender = genderData.gender_rate
+
+    const genderDiv = document.getElementById('gender')
+
+    if(gender > 0) {
+        const male = document.createElement('img')
+        const female = document.createElement('img')
+        male.src = 'https://cdn-icons-png.flaticon.com/128/1340/1340619.png'
+        female.src = 'https://cdn-icons-png.flaticon.com/128/866/866954.png'
+
+        genderDiv.append(male)
+        genderDiv.append(female)
+
+    } else {
+        const unknown = document.createElement('span')
+        unknown.textContent = 'Unknown'
+
+        genderDiv.appendChild(unknown)
+    }
+
     // Image
     const imagen = data.sprites.other['official-artwork'].front_default
     const divImage = document.getElementById('image')

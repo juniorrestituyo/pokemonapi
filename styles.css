@@ -5,7 +5,7 @@
 }
 
 body{
-  height:100vh;
+  height:100%;
     background-image: url('https://i.pinimg.com/originals/2b/3b/04/2b3b04771ccca26c3dd96d781b0117ca.jpg');
     background-repeat: no-repeat;
     background-size: 100%;
@@ -297,64 +297,8 @@ li img {
     height: 9px;
     border-radius: 10px;
     background-color: #0d96e0;
-
-
 }
 
 .skills:not(:last-child){
     margin-bottom: 20px;
 }
-
-/* #hp-bar{
-    animation: hp-fill 2s forwards;
-} */
-/* @keyframes hp-fill{
-    100%{
-        width: 50%;
-    }
-} */
-/* 
-#attack-bar{
-    animation: attack-fill 2s forwards;
-}
-@keyframes attack-fill{
-    100%{
-        width: 50%;
-    }
-}
-
-#defense-bar{
-    animation: defense-fill 2s forwards;
-}
-@keyframes defense-fill{
-    100%{
-        width: 50%;
-    }
-}
-
-#special-attack-bar{
-    animation: special-attack-fill 2s forwards;
-}
-@keyframes special-attack-fill{
-    100%{
-        width: 50%;
-    }
-}
-
-#special-defense-bar{
-    animation: special-defense-fill 2s forwards;
-}
-@keyframes special-defense-fill{
-    100%{
-        width: 60%;
-    }
-}
-
-#speed-bar{
-    animation: speed-fill 2s forwards;
-}
-@keyframes speed-fill{
-    100%{
-        width: 10%;
-    }
-} */
